@@ -1,0 +1,11 @@
+datasets/
+data/
+venv/
+*.h5
+*.pt
+*.pth
+*.pkl
+*.onnx
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

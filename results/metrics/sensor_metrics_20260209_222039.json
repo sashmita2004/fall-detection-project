@@ -1,0 +1,21 @@
+{
+    "test_accuracy": 0.8480565547943115,
+    "test_precision": 0.7945205569267273,
+    "test_recall": 0.8992248177528381,
+    "test_f1_score": 0.843636373783143,
+    "test_loss": 0.34344038367271423,
+    "confusion_matrix": [
+        [
+            248,
+            60
+        ],
+        [
+            26,
+            232
+        ]
+    ],
+    "training_samples": 2638,
+    "validation_samples": 565,
+    "test_samples": 566,
+    "timestamp": "2026-02-09T22:20:39.862132"
+}

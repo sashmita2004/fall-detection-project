@@ -1,0 +1,55 @@
+project:
+  name: "Multi-Modal Fall Detection System"
+  version: "1.0.0"
+  author: "Your Name"
+
+paths:
+  data_dir: "data"
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+  models_dir: "models"
+  logs_dir: "logs"
+  outputs_dir: "outputs"
+
+data:
+  video:
+    frame_width: 224
+    frame_height: 224
+    sequence_length: 30
+    fps: 10
+  sensor:
+    sampling_rate: 50
+    window_size: 100
+    features: ['acc_x', 'acc_y', 'acc_z', 'gyro_x', 'gyro_y', 'gyro_z']
+
+model:
+  vision:
+    cnn_channels: [64, 128, 256]
+    lstm_hidden: 256
+    attention_dim: 128
+    dropout: 0.5
+  sensor:
+    input_dim: 6
+    hidden_dim: 128
+    num_layers: 2
+  fusion:
+    method: "weighted_average"
+
+training:
+  batch_size: 16
+  epochs: 50
+  learning_rate: 0.001
+  optimizer: "adam"
+  early_stopping_patience: 10
+  device: "cuda"
+
+alerts:
+  thresholds:
+    normal: 0.3
+    warning: 0.6
+    critical: 0.85
+  cooldown_seconds: 5
+
+dashboard:
+  port: 8501
+  theme: "dark"
